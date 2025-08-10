@@ -1,0 +1,23 @@
+:root {
+    /* Light theme variables */
+    --primary-color: #4A90E2;
+    --primary-hover: #3a78c2;
+    --bg-color: #ffffff;
+    --text-color: #222222;
+    --border-radius: 8px;
+    --input-bg: #f9f9f9;
+    --input-border: #dddddd;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #6ca8ff;
+        --primary-hover: #5b91e0;
+        --bg-color: #121212;
+        --text-color: #f0f0f0;
+        --input-bg: #1e1e1e;
+        --input-border: #333333;
+    }
+}
