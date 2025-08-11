@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat UI</title>
+  <link rel="stylesheet" href="/style/theme.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">💬</div>
+    <nav>
+      <a href="#">New chat</a>
+      <a href="#">Search</a>
+      <a href="#">Library</a>
+      <a href="#">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Chat container -->
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="chat-header">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      ChatGPT
+    </div>
+
+    <!-- Chat messages -->
+    <div class="chat-window" id="chatWindow">
+      <div class="message bot">Hey there! How’s your day going so far?</div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask anything">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <script src="/script/chat.js"></script>
+</body>
+</html>

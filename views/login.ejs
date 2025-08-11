@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/theme.css">
+    <link rel="stylesheet" href="/style/auth-form.css">
+</head>
+<body>
+    <main class="auth-container">
+        <h1 class="auth-title">Sign In</h1>
+        <form action="/auth/login" method="POST" class="auth-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p class="auth-switch">
+            Don’t have an account?
+            <a href="/auth/register">Register</a>
+        </p>
+    </main>
+</body>
+</html>
