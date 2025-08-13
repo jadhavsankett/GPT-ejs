@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
 
-  // Toggle sidebar
-  const toggleSidebar = () => {
-    sidebar.classList.toggle("active");
-    overlay.classList.toggle("active");
+  const toggleSidebar = (state) => {
+    if (state === "open") {
+      sidebar.classList.add("active");
+      overlay.classList.add("active");
+    } else {
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+    }
   };
 
-  menuBtn.addEventListener("click", toggleSidebar);
-  overlay.addEventListener("click", toggleSidebar);
+  menuBtn.addEventListener("click", () => toggleSidebar("open"));
+  closeSidebar.addEventListener("click", () => toggleSidebar("close"));
+  overlay.addEventListener("click", () => toggleSidebar("close"));
 
   // Append messages
   const appendMessage = (text, sender) => {

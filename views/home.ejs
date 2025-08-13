@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chat UI</title>
-  <link rel="stylesheet" href="/style/theme.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat UI</title>
+    <link rel="stylesheet" href="/style/theme.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span>Chats</span>
+        <button id="closeSidebar">×</button>
+      </div>
+      <div class="chat-list">
+        <div class="chat-list-item">+ New chat</div>
+        <div class="chat-list-item">Casual greeting exchange</div>
+      </div>
+    </aside>
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="logo">💬</div>
-    <nav>
-      <a href="#">New chat</a>
-      <a href="#">Search</a>
-      <a href="#">Library</a>
-      <a href="#">Settings</a>
-    </nav>
-  </aside>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-  <!-- Overlay -->
-  <div class="overlay" id="overlay"></div>
+    <!-- Chat container -->
+    <div class="chat-container">
+      <!-- Header -->
+      <div class="chat-header">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        ChatGPT
+      </div>
 
-  <!-- Chat container -->
-  <div class="chat-container">
-    <!-- Header -->
-    <div class="chat-header">
-      <button class="menu-btn" id="menuBtn">☰</button>
-      ChatGPT
+      <!-- Chat messages -->
+      <div class="chat-window" id="chatWindow">
+        <div class="message bot">Hey there! How’s your day going so far?</div>
+      </div>
+
+      <!-- Input area -->
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask anything" />
+        <button id="sendBtn">Send</button>
+      </div>
     </div>
 
-    <!-- Chat messages -->
-    <div class="chat-window" id="chatWindow">
-      <div class="message bot">Hey there! How’s your day going so far?</div>
-    </div>
-
-    <!-- Input area -->
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Ask anything">
-      <button id="sendBtn">Send</button>
-    </div>
-  </div>
-
-  <script src="/script/chat.js"></script>
-</body>
+    <!-- script cdn -->
+    <script
+      src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+      integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+      crossorigin="anonymous"
+    ></script>
+   <script>
+      const socket = io(); 
+      // io colling to connect the brower and server connect throw the socket io
+    </script>
+    <script src="/script/chat.js" defer></script>
+  </body>
 </html>

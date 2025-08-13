@@ -10,22 +10,22 @@
     --font-family: 'Inter', sans-serif;
 }
 
-/* Dark theme overrides
-@media (prefers-color-scheme: dark) {
+/* Dark theme overrides */
+/* @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #6ca8ff;
         --primary-hover: #5b91e0;
-        --bg-color: #121212;
+        --bg-color: #343541;
         --text-color: #f0f0f0;
-        --input-bg: #1e1e1e;
-        --input-border: #333333;
+        --input-bg: #b3b3ba;
+        --input-border: #bdbbbb76;
     }
 } */
 
 :root {
   --bg-dark: #202123;
   --bg-light: #343541;
-  --bg-sidebar: #000000;
+  --bg-sidebar: #343541;
   --bg-input: #40414f;
   --text-light: #ffffff;
   --text-muted: #8e8e93;
@@ -49,34 +49,75 @@ body {
   display: flex;
 }
 
-/* Sidebar - starts closed */
+/* Sidebar slider */
 .sidebar {
   background: var(--bg-sidebar);
-  width: 240px;
+  width: 280px;
   height: 100%;
   position: fixed;
   top: 0;
-  left: -240px;
+  left: -280px;
   transition: left 0.3s ease;
   z-index: 1000;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar.active {
   left: 0;
 }
 
-.sidebar .logo {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.sidebar nav a {
+.sidebar-header button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Chat list */
+.chat-list {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.chat-list-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.chat-list-item:hover {
+  background: #2c2d30;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 900;
+}
+
+.overlay.active {
   display: block;
-  color: var(--text-muted);
-  text-decoration: none;
-  margin: 1rem 0;
-  font-size: 1.1rem;
 }
 
 /* Chat container */
