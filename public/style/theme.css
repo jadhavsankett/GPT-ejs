@@ -1,13 +1,13 @@
 :root {
-    /* Light theme variables */
-    --primary-color: #4A90E2;
-    --primary-hover: #3a78c2;
-    --bg-color: #ffffff;
-    --text-color: #222222;
-    --border-radius: 8px;
-    --input-bg: #f9f9f9;
-    --input-border: #dddddd;
-    --font-family: 'Inter', sans-serif;
+  /* Light theme variables */
+  --primary-color: #4A90E2;
+  --primary-hover: #3a78c2;
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --border-radius: 8px;
+  --input-bg: #f9f9f9;
+  --input-border: #dddddd;
+  --font-family: 'Inter', sans-serif;
 }
 
 /* Dark theme overrides */
@@ -111,7 +111,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: none;
   z-index: 900;
 }
@@ -158,6 +158,15 @@ body {
 .message {
   margin-bottom: 1rem;
   max-width: 70%;
+  padding:0.8rem;
+  margin: 0.5rem 0;
+  margin-top: .8rem;
+  border-radius: var(--radius);
+  max-width: 75%;
+  clear: both;
+  word-wrap: break-word;
+  background: var(--bg-input);
+  color: var(--text-light);
 }
 
 .message.bot {
@@ -204,7 +213,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: none;
   z-index: 900;
 }

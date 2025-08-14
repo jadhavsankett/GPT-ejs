@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
+  const closeSidebar = document.getElementById("closeSidebar"); // FIXED
+
+  const socket = io(); // make sure socket.io is loaded
 
   const toggleSidebar = (state) => {
     if (state === "open") {
@@ -20,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   closeSidebar.addEventListener("click", () => toggleSidebar("close"));
   overlay.addEventListener("click", () => toggleSidebar("close"));
 
-  // Append messages
   const appendMessage = (text, sender) => {
     const msg = document.createElement("div");
     msg.classList.add("message", sender);
@@ -29,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chatWindow.scrollTop = chatWindow.scrollHeight;
   };
 
-  // Send message
   const sendMessage = () => {
     const text = userInput.value.trim();
     if (!text) return;
@@ -37,11 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     appendMessage(text, "user");
     userInput.value = "";
 
-    // Simulated bot response
-    setTimeout(() => {
-      appendMessage(`You said: ${text}`, "bot");
-    }, 500);
+    socket.emit('ai-message', text);
   };
+
+  socket.on('ai-message-response', (message) => {
+    appendMessage(message, "assistant");
+  });
 
   sendBtn.addEventListener("click", sendMessage);
   userInput.addEventListener("keypress", (e) => {
